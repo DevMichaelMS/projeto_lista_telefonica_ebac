@@ -10,56 +10,51 @@ let linhas = '';
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
-
-    adcionaLinha();
+    adicionaLinha();
     atualizaTabela();
     atualizaQuantidadeContatos();
 });
 
-function uncheckOther(otherId) {
-    document.getElementById(otherId).checked = false;
-}
-
-function adcionaLinha() {
+function adicionaLinha() {
     const inputNome = document.getElementById('name');
     const inputDDD = document.getElementById('DDD');
     const inputPhone = document.getElementById('phone');
-    const isCel = document.getElementById('cell').checked;
-    const isResid = document.getElementById('residencial').checked;
+    const isCelular = document.getElementById('cell').checked;
+    const isResidencial = document.getElementById('residencial').checked;
 
-let tipo = '';
-if (isCel) {
-    tipo = 'Celular';
-} else if (isResid) {
-    tipo = 'Residencial';
-}else {
-    alert('Selecione o tipo de telefone: Celular ou Residencial');
-    return;
-}
+    if (nomes.includes(inputNome.value) || telefones.includes(inputPhone.value)) {
+        alert('Nome ou número de telefone já adicionado!');
+        return;
+    }
 
-if (nomes.includes(inputNome.value) || telefones.includes(inputPhone.value)) {
-    alert('Nome ou número ja adicionado!');
-    return;
-}
+    let tipo = '';
+    if (isCelular) {
+        tipo = 'Celular';
+    } else if (isResidencial) {
+        tipo = 'Residencial';
+    } else {
+        alert('Selecione o tipo de telefone: Celular ou Residencial');
+        return;
+    }
 
-nomes.push(inputNome.value);
-DDDs.push(inputDDD.value);
-telefones.push(inputPhone.value);
-tipos.push(tipo);
+    nomes.push(inputNome.value);
+    DDDs.push(inputDDD.value);
+    telefones.push(inputPhone.value);
+    tipos.push(tipo);
 
-let linha = '<tr>';
-linha += `<td>${inputNome.value}</td>`;
-linha += `<td>(${inputDDD.value}) ${inputPhone.value}</td>`;
-linha += `<td>${tipo === 'Celular' ? emojiCelular : emojiResidencial}</td>)`;
-linha += `</tr>`;
+    let linha = '<tr>';
+    linha += `<td>${inputNome.value}</td>`;
+    linha += `<td>(${inputDDD.value}) ${inputPhone.value}</td>`;
+    linha += `<td>${tipo === 'Celular' ? emojiCelular : emojiResidencial}</td>`;
+    linha += '</tr>';
 
-linhas += linha;
+    linhas += linha;
 
-inputNome.value = '';
-inputDDD.value = '';
-inputPhone.value = '';
-document.getElementById('cell').checked = false;
-document.getElementById('residencial').checked = false;
+    inputNome.value = '';
+    inputDDD.value = '';
+    inputPhone.value = '';
+    document.getElementById('cell').checked = false;
+    document.getElementById('residencial').checked = false;
 }
 
 function atualizaTabela() {
@@ -70,4 +65,8 @@ function atualizaTabela() {
 function atualizaQuantidadeContatos() {
     const qtdTotalCont = document.querySelector('.qtd-total-cont');
     qtdTotalCont.textContent = nomes.length;
+}
+
+function uncheckOther(otherId) {
+    document.getElementById(otherId).checked = false;
 }
