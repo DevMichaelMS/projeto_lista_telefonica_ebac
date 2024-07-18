@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Fredoka:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+header img {
+    height: 80px;
+    margin-right: 20px;
+}
+
+header h1 {
+    font-family: 'Bungee', sans-serif;
+    font-size: 2em;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #ffffff;
+}
+
+input[type="text"],
+input[type="tel"] {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+label {
+    font-size: 16px;
+    color: #333;
+    margin-right: 20px;
+}
+
+button {
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    background-color: #007411;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #01a11a;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+table td {
+    background-color: #ffffff;
+}
+
+table td img {
+    height: 60px;
+}
+
+.qtd-total-cont {
+    font-weight: bold;
+    color: #000;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}

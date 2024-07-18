@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Telefônica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="img/logo.png" alt="Logo de um celular">
+            <h1>Lista Telefônica EBAC</h1>
+        </header>
+            <form id="form-add">
+                <input type="text" name="name" id="name" placeholder="Digite o nome" required>
+                <input type="tel" name="DDD" id="DDD" placeholder="Digite o DDD ex: 11" required>
+                <div>
+                    <input type="checkbox" name="cell" id="cell" onchange="uncheckOther('residencial')">
+                    <label for="cell">Celular</label>
+                    <input type="checkbox" name="residencial" id="residencial" onchange="uncheckOther('cell')">
+                    <label for="residencial">Residencial</label>
+                </div>
+                <input type="tel" name="phone" id="phone" placeholder="Digite o telefone" required>
+                <button type="submit" id="add" class="add">Adicionar +</button>
+            </form>
+            <table id="lista" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Número do telefone</th>
+                        <th>Celular ou Residencial</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                    <tr>
+                        <td class="qtd-cont">NºContatos</td>
+                        <td class="qtd-total-cont" colspan="2">0</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <footer>
+                <p>&copy; 2024 Lista Telefônica EBAC</p>
+            </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
